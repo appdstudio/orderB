@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.rms.orderB")
+@ComponentScan(basePackages={"com.rms.orderB"})
 public class AppConfig {
 
 	@Bean

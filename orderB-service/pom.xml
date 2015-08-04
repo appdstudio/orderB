@@ -9,14 +9,13 @@
 	<artifactId>orderB-service</artifactId>
 	<packaging>jar</packaging>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>com.rms.orderB</groupId>
-				<artifactId>orderB-core</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-	
+	<dependencies>
+		<dependency>
+			<groupId>com.rms.orderB</groupId>
+			<artifactId>orderB-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+
 </project>

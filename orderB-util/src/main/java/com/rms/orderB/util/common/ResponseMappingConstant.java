@@ -1,4 +1,4 @@
-package com.rms.orderB.common;
+package com.rms.orderB.util.common;
 
 public final class ResponseMappingConstant {
 

@@ -1,17 +1,18 @@
-package com.rms.orderB.core.dto;
+package com.rms.orderB.dto;
 
 import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 public class CustomerInfoDTO {
 
-	@NotNull
+	@NotEmpty(message="Customer name should not be blank")
 	@Size(max=50)
 	private String customerName;
-	
-	@NotNull
+
+	@NotEmpty(message="Phone number should not be blank")
 	@Digits(integer=10, fraction=0)
 	private String phoneNo;
 
@@ -27,4 +28,11 @@ public class CustomerInfoDTO {
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
+	@Override
+	public String toString() {
+		return "CustomerInfoDTO [customerName=" + customerName + ", phoneNo="
+				+ phoneNo + "]";
+	}
+
+
 }
