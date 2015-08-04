@@ -13,6 +13,9 @@
         <dependent-module archiveName="orderB-service-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/orderB-service/orderB-service">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="orderB-ws-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/orderB-ws/orderB-ws">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
 		<property name="context-root" value="orderB-web"/>
 		<property name="java-output-path" value="/orderB-web/target/classes"/>
 	</wb-module>
