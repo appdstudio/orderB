@@ -19,7 +19,11 @@ public class Menu implements Serializable {
 	@Column(length = 50, nullable=false)
 	private String menuName;
 	
+	
 	private Short displayOrder;
+	
+	@Column(nullable=false)
+	private boolean isActive = Boolean.valueOf(true);
 	
 	public Integer getPrimaryKey() {
 		return primaryKey;
@@ -39,5 +43,17 @@ public class Menu implements Serializable {
 	public void setDisplayOrder(Short displayOrder) {
 		this.displayOrder = displayOrder;
 	}
+	public boolean isActive() {
+		return isActive;
+	}
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getMenuName()+" || "+getDisplayOrder();
+	}
+	
 	
 }

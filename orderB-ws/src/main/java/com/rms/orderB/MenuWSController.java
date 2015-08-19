@@ -1,33 +1,31 @@
 package com.rms.orderB;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rms.orderB.dto.MenuDTO;
+import com.rms.orderB.service.MenuService;
 import com.rms.orderB.util.common.RequestMappingConstants;
-import com.rms.orderB.dto.CustomerInfoDTO;
-import com.rms.orderB.service.CustomerInfoService;
+import com.rms.orderB.util.helper.HPRequest;
+
 
 
 @RestController
 @RequestMapping(value=RequestMappingConstants.WS)
 public class MenuWSController {
-
+	
 	@Autowired
-	private CustomerInfoService customerInfoService;
-
-	@RequestMapping(value = RequestMappingConstants.SHOW_ALL_CUSTOMER_INFO)
-	public List<CustomerInfoDTO> getAllCustomerInfo() {
-		return customerInfoService.getAllCustomerInfo();
+	private MenuService menuService;
+	
+		
+	@RequestMapping(value=RequestMappingConstants.CREATE_MENU)
+	public void createMenu(@Valid @RequestBody HPRequest<MenuDTO> request){
+		menuService.saveMenu(request.getRequestDTO());
 	}
-
-	@RequestMapping(value = RequestMappingConstants.CREATE_CUSTOMER_INFO, method=RequestMethod.POST)
-	public void createCustomerInfo(@Valid CustomerInfoDTO customerInfoDTO) {
-		customerInfoService.saveCustomerInfo(customerInfoDTO);
-	}
+	
+	
 }

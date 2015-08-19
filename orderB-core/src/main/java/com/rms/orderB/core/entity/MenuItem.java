@@ -23,6 +23,8 @@ public class MenuItem implements Serializable {
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer primaryKey;
+	
+	private String displayName;
 
 	private Short displayOrder;
 
@@ -84,6 +86,13 @@ public class MenuItem implements Serializable {
 
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
+	}
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
 	

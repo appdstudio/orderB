@@ -21,6 +21,8 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 	private SessionFactory sessionFactory;
 
 	protected Session getSession(){
+		/*if(sessionFactory.getCurrentSession()!=null && sessionFactory.getCurrentSession().isConnected())
+			return sessionFactory.getCurrentSession();*/
 		return sessionFactory.getCurrentSession();
 	}
 
